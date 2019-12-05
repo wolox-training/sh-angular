@@ -1,5 +1,4 @@
-$equalizer-black: #000;
-$equalizer-grey: #999;
+@import "colors";
 
 * {
   box-sizing: border-box;
@@ -22,7 +21,7 @@ a,
 button,
 select,
 textarea {
-  color: $equalizer-black;
+  color: $black;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -74,7 +73,7 @@ a {
   &:focus,
   &:active,
   &:hover {
-    color: $equalizer-black;
+    color: $black;
     text-decoration: none;
   }
 }
@@ -87,6 +86,6 @@ li {
 }
 
 ::placeholder {
-  color: $equalizer-grey;
+  color: $grey;
   opacity: 1;
 }

@@ -1,15 +1,25 @@
-.title {
+@import "colors";
+
+.book-title {
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 45px;
 }
 
-.author,
-.editorial,
-.publication {
+.book-details {
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
-span {
-  color: gray;
+.description {
+  color: $grey;
+}
+
+.container {
+  display: flex;
+}
+
+.book-img {
+  height: 250px;
+  margin-right: 35px;
+  width: 180px;
 }
