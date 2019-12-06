@@ -1,0 +1,29 @@
+.container-book-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  justify-content: center;
+  margin: auto;
+}
+
+.container-book {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  width: 250px;
+}
+
+.book-list-title {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.book-list-img {
+  width: 100%;
+}
+
+.book-list-author {
+  color: $grey;
+}
