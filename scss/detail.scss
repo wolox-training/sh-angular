@@ -43,13 +43,18 @@
 
 .container-img-book {
   position: relative;
-}
-
-.book-badge {
-  height: 90px;
-  right: 17px;
-  position: absolute;
-  top: -17px;
-  transform: rotate(10deg);
-  width: 70px;
+  &::before {
+    content: "";
+    background: url("./assets/badge.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    height: 90px;
+    position: absolute;
+    right: 17px;
+    top: -17px;
+    transform: rotate(10deg);
+    width: 70px;
+    z-index: 1;
+  }
 }
