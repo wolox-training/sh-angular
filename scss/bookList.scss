@@ -31,9 +31,12 @@
 }
 
 .menu {
+  align-items: center;
   background: $white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
   height: 70px;
+  justify-content: space-between;
   position: fixed;
   width: 100%;
   &::before {
@@ -47,23 +50,20 @@
   }
 }
 
-.menu-list {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 380px 0;
-  height: 100%;
-}
-
 .book-detail-link {
   margin: 20px;
 }
 
 .wolox-logo {
+  background: url("./assets/LogoWolox.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 70px;
+  margin: 10px 380px 0;
   width: 215px;
 }
 
 .logout {
   font-size: 20px;
+  margin: 10px 380px 0 0;
 }
