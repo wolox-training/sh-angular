@@ -2,7 +2,15 @@
 
 .book-title {
   font-weight: bold;
-  margin-bottom: 45px;
+  &::before {
+    content: "";
+    background: #bdd23e;
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 50px;
+    width: 55%;
+  }
 }
 
 .book-details {
@@ -16,10 +24,19 @@
 
 .container {
   display: flex;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  width: 600px;
 }
 
 .book-img {
   height: 250px;
   margin-right: 35px;
   width: 180px;
+}
+
+.container-book-title {
+  margin-bottom: 45px;
 }
