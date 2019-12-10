@@ -1,0 +1,84 @@
+@import "colors";
+
+@mixin form-item-style($bgn-color, $text-color) {
+  background: $bgn-color;
+  border-radius: 5px;
+  color: $text-color;
+  height: 30px;
+  line-height: 2;
+  text-align: center;
+  width: 100%;
+}
+
+.login-container {
+  background: $silver;
+  height: 400px;
+  margin: 60px auto;
+  position: relative;
+  width: 300px;
+
+  &::before {
+    background: $deep-sky-blue;
+    content: "";
+    display: block;
+    height: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+}
+
+.form-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-item {
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-label-item {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.form-item-login {
+  @include form-item-style($lemon, $white);
+  margin: 20px 0 30px;
+  position: relative;
+
+  &::before {
+    background: $grey;
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 12px;
+    position: absolute;
+    top: 45px;
+    width: 100%;
+  }
+
+  &:hover,
+  &:visited {
+    color: $white;
+  }
+}
+
+.form-item-signup {
+  @include form-item-style($silver, $lemon);
+  border: 1px solid $lemon;
+  &:hover,
+  &:visited {
+    color: $lemon;
+  }
+}
+
+.form-img {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 220px;
+}
