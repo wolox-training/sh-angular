@@ -1,44 +1,59 @@
 @import "colors";
 
+@mixin font-style {
+  font-size: 15px;
+  color: $grey;
+}
+
 .book-title {
+  font-size: 25px;
   font-weight: bold;
+  margin-right: 5px;
 
   &::before {
     content: "";
     background: $lemon;
     display: block;
-    height: 2px;
+    height: 3px;
     position: absolute;
-    top: 50px;
+    top: 55px;
     width: 55%;
   }
 }
 
+.title-description {
+  @include font-style();
+  font-weight: bolder;
+}
+
 .book-details {
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 
 .description {
-  color: $grey;
+  @include font-style();
 }
 
 .container {
   display: flex;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  margin: 20px;
+  margin: 20px auto;
   padding: 20px;
   position: relative;
-  width: 600px;
+  width: 650px;
 }
 
 .book-img {
-  height: 250px;
+  height: 300px;
   margin-right: 35px;
-  width: 180px;
+  width: 220px;
 }
 
 .container-book-title {
+  display: flex;
+  align-items: center;
   margin-bottom: 45px;
 }
 
@@ -58,5 +73,25 @@
     transform: rotate(10deg);
     width: 70px;
     z-index: 1;
+  }
+}
+
+.back-to-index {
+  font-weight: lighter;
+  font-size: 25px;
+  margin: 30px 380px 0;
+  padding-left: 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url("./assets/back-arrow-20.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    height: 30px;
+    right: 70px;
+    width: 27px;
   }
 }
