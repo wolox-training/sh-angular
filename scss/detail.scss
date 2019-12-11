@@ -1,8 +1,8 @@
 @import "colors";
 
 @mixin font-style {
-  font-size: 15px;
   color: $grey;
+  font-size: 15px;
 }
 
 .book-title {
