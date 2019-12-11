@@ -2,9 +2,10 @@
 
 .book-title {
   font-weight: bold;
+
   &::before {
     content: "";
-    background: #bdd23e;
+    background: $lemon;
     display: block;
     height: 2px;
     position: absolute;
@@ -39,4 +40,23 @@
 
 .container-book-title {
   margin-bottom: 45px;
+}
+
+.container-img-book {
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url("./assets/badge.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    height: 90px;
+    position: absolute;
+    right: 17px;
+    top: -17px;
+    transform: rotate(10deg);
+    width: 70px;
+    z-index: 1;
+  }
 }

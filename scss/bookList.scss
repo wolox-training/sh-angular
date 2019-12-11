@@ -1,0 +1,69 @@
+@import "colors";
+
+.container-book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  padding-top: 80px;
+  width: 1200px;
+}
+
+.container-book-item {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 205px;
+}
+
+.book-list-title {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.book-list-img {
+  width: 100%;
+}
+
+.book-list-author {
+  color: $grey;
+}
+
+.menu {
+  align-items: center;
+  background: $white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  &::before {
+    content: "";
+    background: $deep-sky-blue;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.book-detail-link {
+  margin: 20px;
+}
+
+.wolox-logo {
+  background: url("./assets/LogoWolox.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 70px;
+  margin: 10px 380px 0;
+  width: 215px;
+}
+
+.logout {
+  font-size: 20px;
+  margin: 10px 380px 0 0;
+}
