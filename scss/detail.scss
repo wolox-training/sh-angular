@@ -1,4 +1,8 @@
-@import "colors";
+@import 'colors';
+$badge-height: 90px;
+$badge-width: 70px;
+$badge-height-responsive: calc(#{$badge-height} * 0.7);
+$badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 @mixin font-style {
   color: $grey;
@@ -9,21 +13,25 @@
   font-size: 25px;
   font-weight: bold;
   margin-right: 5px;
+  position: relative;
 
   &::before {
     background: $lemon;
-    content: "";
+    content: '';
     display: block;
-    height: 3px;
+    height: 4px;
     position: absolute;
-    top: 55px;
-    width: 55%;
+    top: 34px;
+    width: 260px;
+    @media screen and (max-width: 1024px) {
+      width: 295px;
+    }
   }
 }
 
 .title-description {
-  @include font-style();
   font-weight: bolder;
+  @include font-style();
 }
 
 .book-details {
@@ -39,59 +47,87 @@
 .container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   display: flex;
-  margin: 20px auto;
+  margin: 80px auto;
   padding: 20px;
   position: relative;
-  width: 650px;
+  width: 670px;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    width: 335px;
+  }
 }
 
 .book-img {
   height: 300px;
   margin-right: 35px;
   width: 220px;
+  @media screen and (max-width: 1024px) {
+    margin-right: 0;
+  }
 }
 
 .container-book-title {
   align-items: center;
   display: flex;
   margin-bottom: 45px;
+  @media screen and (max-width: 1024px) {
+    margin-top: 20px;
+  }
 }
 
 .container-img-book {
   position: relative;
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
 
   &::before {
-    background: url("./assets/badge.png");
+    background: url('./assets/badge.png');
     background-repeat: no-repeat;
     background-size: contain;
-    content: "";
+    content: '';
     display: block;
-    height: 90px;
+    height: $badge-height;
     position: absolute;
     right: 17px;
     top: -17px;
     transform: rotate(10deg);
-    width: 70px;
+    width: $badge-width;
     z-index: 1;
+    @media screen and (max-width: 1024px) {
+      height: $badge-height-responsive;
+      right: 25px;
+      top: -10px;
+      width: $badge-width-responsive;
+    }
   }
 }
 
 .back-to-index {
-  font-weight: lighter;
   font-size: 25px;
-  margin: 30px 380px 0;
+  font-weight: lighter;
+  left: -130px;
   padding-left: 20px;
-  position: relative;
+  position: absolute;
+  top: -50px;
+  @media screen and (max-width: 1024px) {
+    left: 125px;
+    top: 615px;
+  }
 
   &::before {
-    background: url("./assets/back-arrow-20.png");
+    background: url('./assets/back-arrow-20.png');
     background-repeat: no-repeat;
     background-size: contain;
-    content: "";
+    content: '';
     display: block;
     height: 30px;
     position: absolute;
     right: 70px;
     width: 27px;
+    @media screen and (max-width: 1024px) {
+      left: -20px;
+    }
   }
 }
