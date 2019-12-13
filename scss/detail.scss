@@ -4,9 +4,9 @@ $badge-width: 70px;
 $badge-height-responsive: calc(#{$badge-height} * 0.7);
 $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
-@mixin font-style {
+@mixin font-style($font-size-desc: 18px) {
   color: $grey;
-  font-size: 15px;
+  font-size: $font-size-desc;
 }
 
 .book-title {
@@ -14,16 +14,17 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   font-weight: bold;
   margin-right: 5px;
   position: relative;
+  @media screen and (max-width: 1024px) {
+    font-size: 25px;
 
-  &::before {
-    background: $lemon;
-    content: '';
-    display: block;
-    height: 4px;
-    position: absolute;
-    top: 34px;
-    width: 260px;
-    @media screen and (max-width: 1024px) {
+    &::before {
+      background: $lemon;
+      content: '';
+      display: block;
+      height: 4px;
+      left: -58px;
+      position: absolute;
+      top: 400px;
       width: 295px;
     }
   }
@@ -32,21 +33,32 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 .title-description {
   font-weight: bolder;
   @include font-style();
+  position: absolute;
+  top: 64px;
+  @media screen and (max-width: 1024px) {
+    @include font-style(16px);
+    top: 400px;
+  }
 }
 
 .book-details {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 30px;
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+  }
 }
 
 .description {
-  @include font-style();
+  @include font-style(18px);
+  @media screen and (max-width: 1024px) {
+    @include font-style(14px);
+  }
 }
 
 .container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  display: flex;
   margin: 80px auto;
   padding: 20px;
   position: relative;
@@ -54,6 +66,14 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     width: 335px;
+  }
+}
+
+.container-book {
+  display: grid;
+  grid-template: 100px / 250px 1fr;
+  @media screen and (max-width: 1024px) {
+    grid-template: 55px 400px 140px/1fr;
   }
 }
 
@@ -69,8 +89,12 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 .container-book-title {
   align-items: center;
   display: flex;
+  grid-column: span 2;
+  justify-content: center;
   margin-bottom: 45px;
+  order: -1;
   @media screen and (max-width: 1024px) {
+    grid-column: auto;
     margin-top: 20px;
   }
 }
@@ -90,7 +114,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     display: block;
     height: $badge-height;
     position: absolute;
-    right: 17px;
+    right: 6px;
     top: -17px;
     transform: rotate(10deg);
     width: $badge-width;
@@ -104,16 +128,22 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   }
 }
 
+.container-book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .back-to-index {
   font-size: 25px;
   font-weight: lighter;
-  left: -130px;
   padding-left: 20px;
   position: absolute;
   top: -50px;
   @media screen and (max-width: 1024px) {
+    font-size: 20px;
     left: 125px;
-    top: 615px;
+    top: 630px;
   }
 
   &::before {
@@ -127,7 +157,9 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     right: 70px;
     width: 27px;
     @media screen and (max-width: 1024px) {
-      left: -20px;
+      left: -38px;
+      position: relative;
+      top: 28px;
     }
   }
 }
