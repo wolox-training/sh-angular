@@ -23,9 +23,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     position: absolute;
     top: 34px;
     width: 260px;
-    @media screen and (max-width: 1024px) {
-      width: 295px;
-    }
   }
 }
 
@@ -51,36 +48,22 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   padding: 20px;
   position: relative;
   width: 670px;
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    width: 335px;
-  }
 }
 
 .book-img {
   height: 300px;
   margin-right: 35px;
   width: 220px;
-  @media screen and (max-width: 1024px) {
-    margin-right: 0;
-  }
 }
 
 .container-book-title {
   align-items: center;
   display: flex;
   margin-bottom: 45px;
-  @media screen and (max-width: 1024px) {
-    margin-top: 20px;
-  }
 }
 
 .container-img-book {
   position: relative;
-  @media screen and (max-width: 1024px) {
-    display: flex;
-    justify-content: center;
-  }
 
   &::before {
     background: url('./assets/badge.png');
@@ -95,12 +78,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     transform: rotate(10deg);
     width: $badge-width;
     z-index: 1;
-    @media screen and (max-width: 1024px) {
-      height: $badge-height-responsive;
-      right: 25px;
-      top: -10px;
-      width: $badge-width-responsive;
-    }
   }
 }
 
@@ -111,10 +88,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   padding-left: 20px;
   position: absolute;
   top: -50px;
-  @media screen and (max-width: 1024px) {
-    left: 125px;
-    top: 615px;
-  }
 
   &::before {
     background: url('./assets/back-arrow-20.png');
@@ -126,7 +99,56 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     position: absolute;
     right: 70px;
     width: 27px;
-    @media screen and (max-width: 1024px) {
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book-title {
+    &::before {
+      width: 295px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    width: 335px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book-img {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container-book-title {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container-img-book {
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      height: $badge-height-responsive;
+      right: 25px;
+      top: -10px;
+      width: $badge-width-responsive;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .back-to-index {
+    left: 125px;
+    top: 615px;
+
+    &::before {
       left: -20px;
     }
   }
