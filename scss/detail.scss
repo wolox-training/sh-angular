@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 $badge-height: 90px;
 $badge-width: 70px;
 $badge-height-responsive: calc(#{$badge-height} * 0.7);
@@ -17,7 +17,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
   &::before {
     background: $lemon;
-    content: '';
+    content: "";
     display: block;
     height: 4px;
     position: absolute;
@@ -48,6 +48,21 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   padding: 20px;
   position: relative;
   width: 670px;
+
+  &::before {
+    background: url("./assets/badge.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    height: $badge-height;
+    left: 194px;
+    position: absolute;
+    top: 4px;
+    transform: rotate(10deg);
+    width: $badge-width;
+    z-index: 1;
+  }
 }
 
 .book-img {
@@ -62,25 +77,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   margin-bottom: 45px;
 }
 
-.container-img-book {
-  position: relative;
-
-  &::before {
-    background: url('./assets/badge.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    display: block;
-    height: $badge-height;
-    position: absolute;
-    right: 17px;
-    top: -17px;
-    transform: rotate(10deg);
-    width: $badge-width;
-    z-index: 1;
-  }
-}
-
 .back-to-index {
   font-size: 25px;
   font-weight: lighter;
@@ -90,10 +86,10 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   top: -50px;
 
   &::before {
-    background: url('./assets/back-arrow-20.png');
+    background: url("./assets/back-arrow-20.png");
     background-repeat: no-repeat;
     background-size: contain;
-    content: '';
+    content: "";
     display: block;
     height: 30px;
     position: absolute;
@@ -112,8 +108,17 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 @media screen and (max-width: 1024px) {
   .container {
+    align-items: center;
+    display: flex;
     flex-direction: column;
     width: 335px;
+
+    &::before {
+      height: $badge-height-responsive;
+      left: 242px;
+      top: 8px;
+      width: $badge-width-responsive;
+    }
   }
 }
 
@@ -126,20 +131,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 @media screen and (max-width: 1024px) {
   .container-book-title {
     margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .container-img-book {
-    display: flex;
-    justify-content: center;
-
-    &::before {
-      height: $badge-height-responsive;
-      right: 25px;
-      top: -10px;
-      width: $badge-width-responsive;
-    }
   }
 }
 
