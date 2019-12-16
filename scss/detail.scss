@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 $badge-height: 90px;
 $badge-width: 70px;
 $badge-height-responsive: calc(#{$badge-height} * 0.7);
@@ -39,6 +39,21 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   padding: 20px;
   position: relative;
   width: 670px;
+
+  &::before {
+    background: url("./assets/badge.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    height: $badge-height;
+    left: 192px;
+    position: absolute;
+    top: 108px;
+    transform: rotate(10deg);
+    width: $badge-width;
+    z-index: 1;
+  }
 }
 
 .container-book {
@@ -48,7 +63,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 .book-img {
   height: 300px;
-  margin-right: 35px;
   width: 220px;
 }
 
@@ -61,29 +75,8 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   order: -1;
 }
 
-.container-img-book {
-  position: relative;
-
-  &::before {
-    background: url('./assets/badge.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    display: block;
-    height: $badge-height;
-    position: absolute;
-    right: 6px;
-    top: -17px;
-    transform: rotate(10deg);
-    width: $badge-width;
-    z-index: 1;
-  }
-}
-
 .container-book-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 64px;
 }
 
 .back-to-index {
@@ -94,10 +87,10 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   top: -50px;
 
   &::before {
-    background: url('./assets/back-arrow-20.png');
+    background: url("./assets/back-arrow-20.png");
     background-repeat: no-repeat;
     background-size: contain;
-    content: '';
+    content: "";
     display: block;
     height: 30px;
     position: absolute;
@@ -112,7 +105,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
     &::before {
       background: $lemon;
-      content: '';
+      content: "";
       display: block;
       height: 4px;
       left: -58px;
@@ -144,20 +137,30 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 @media screen and (max-width: 1024px) {
   .container {
+    align-items: center;
+    display: flex;
     flex-direction: column;
     width: 335px;
+
+    &::before {
+      height: $badge-height-responsive;
+      left: 242px;
+      top: 64px;
+      width: $badge-width-responsive;
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .container-book {
-    grid-template: 55px 400px 140px/1fr;
+    grid-template: 55px 380px 120px/1fr;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .book-img {
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -169,29 +172,21 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 }
 
 @media screen and (max-width: 1024px) {
-  .container-img-book {
-    display: flex;
-    justify-content: center;
-
-    &::before {
-      height: $badge-height-responsive;
-      right: 25px;
-      top: -10px;
-      width: $badge-width-responsive;
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
   .back-to-index {
     font-size: 20px;
-    left: 125px;
-    top: 630px;
+    left: 135px;
+    top: 585px;
 
     &::before {
       left: -38px;
       position: relative;
       top: 28px;
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container-book-details {
+    margin-top: 0;
   }
 }
