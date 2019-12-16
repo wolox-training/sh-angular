@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 
 .container-book-list {
   display: flex;
@@ -44,9 +44,11 @@
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  z-index: 1;
+
   &::before {
     background: $deep-sky-blue;
-    content: '';
+    content: "";
     display: block;
     height: 10px;
     position: absolute;
@@ -60,7 +62,7 @@
 }
 
 .wolox-logo {
-  background: url('./assets/LogoWolox.png');
+  background: url("./assets/LogoWolox.png");
   background-repeat: no-repeat;
   background-size: contain;
   height: 70px;
