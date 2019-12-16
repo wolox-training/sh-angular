@@ -15,6 +15,11 @@
   flex-direction: column;
   padding: 20px;
   width: 205px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
 }
 
 .book-list-title {
@@ -39,9 +44,11 @@
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  z-index: 1;
+
   &::before {
-    content: "";
     background: $deep-sky-blue;
+    content: "";
     display: block;
     height: 10px;
     position: absolute;
@@ -56,8 +63,8 @@
 
 .wolox-logo {
   background: url("./assets/LogoWolox.png");
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
   height: 70px;
   margin: 10px 380px 0;
   width: 215px;
