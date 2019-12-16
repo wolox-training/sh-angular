@@ -1,4 +1,8 @@
 @import "colors";
+$badge-height: 90px;
+$badge-width: 70px;
+$badge-height-responsive: calc(#{$badge-height} * 0.7);
+$badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 @mixin font-style {
   color: $grey;
@@ -9,21 +13,22 @@
   font-size: 25px;
   font-weight: bold;
   margin-right: 5px;
+  position: relative;
 
   &::before {
     background: $lemon;
     content: "";
     display: block;
-    height: 3px;
+    height: 4px;
     position: absolute;
-    top: 55px;
-    width: 55%;
+    top: 34px;
+    width: 260px;
   }
 }
 
 .title-description {
-  @include font-style();
   font-weight: bolder;
+  @include font-style();
 }
 
 .book-details {
@@ -39,10 +44,25 @@
 .container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   display: flex;
-  margin: 20px auto;
+  margin: 80px auto;
   padding: 20px;
   position: relative;
-  width: 650px;
+  width: 670px;
+
+  &::before {
+    background: url("./assets/badge.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    height: $badge-height;
+    left: 194px;
+    position: absolute;
+    top: 4px;
+    transform: rotate(10deg);
+    width: $badge-width;
+    z-index: 1;
+  }
 }
 
 .book-img {
@@ -57,31 +77,13 @@
   margin-bottom: 45px;
 }
 
-.container-img-book {
-  position: relative;
-
-  &::before {
-    background: url("./assets/badge.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: "";
-    display: block;
-    height: 90px;
-    position: absolute;
-    right: 17px;
-    top: -17px;
-    transform: rotate(10deg);
-    width: 70px;
-    z-index: 1;
-  }
-}
-
 .back-to-index {
-  font-weight: lighter;
   font-size: 25px;
-  margin: 30px 380px 0;
+  font-weight: lighter;
+  left: -130px;
   padding-left: 20px;
-  position: relative;
+  position: absolute;
+  top: -50px;
 
   &::before {
     background: url("./assets/back-arrow-20.png");
@@ -93,5 +95,52 @@
     position: absolute;
     right: 70px;
     width: 27px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book-title {
+    &::before {
+      width: 295px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 335px;
+
+    &::before {
+      height: $badge-height-responsive;
+      left: 242px;
+      top: 8px;
+      width: $badge-width-responsive;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book-img {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container-book-title {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .back-to-index {
+    left: 125px;
+    top: 615px;
+
+    &::before {
+      left: -20px;
+    }
   }
 }
