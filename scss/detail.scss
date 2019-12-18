@@ -4,9 +4,9 @@ $badge-width: 70px;
 $badge-height-responsive: calc(#{$badge-height} * 0.7);
 $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
-@mixin font-style {
+@mixin font-style($font-size-desc: 18px) {
   color: $grey;
-  font-size: 15px;
+  font-size: $font-size-desc;
 }
 
 .book-title {
@@ -14,25 +14,18 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
   font-weight: bold;
   margin-right: 5px;
   position: relative;
-
-  &::before {
-    background: $lemon;
-    content: "";
-    display: block;
-    height: 4px;
-    position: absolute;
-    top: 34px;
-    width: 260px;
-  }
 }
 
 .title-description {
   font-weight: bolder;
+
   @include font-style();
+  position: absolute;
+  top: 64px;
 }
 
 .book-details {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -43,7 +36,6 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 .container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  display: flex;
   margin: 80px auto;
   padding: 20px;
   position: relative;
@@ -56,31 +48,43 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     content: "";
     display: block;
     height: $badge-height;
-    left: 194px;
+    left: 192px;
     position: absolute;
-    top: 4px;
+    top: 78px;
     transform: rotate(10deg);
     width: $badge-width;
     z-index: 1;
   }
 }
 
+.container-book {
+  display: grid;
+  grid-template: 1fr/0.7fr 1fr;
+}
+
 .book-img {
   height: 300px;
-  margin-right: 35px;
   width: 220px;
+  order: 2;
 }
 
 .container-book-title {
   align-items: center;
   display: flex;
+  grid-column: span 2;
+  justify-content: center;
   margin-bottom: 45px;
+  order: 1;
+}
+
+.container-book-details {
+  margin-top: 64px;
+  order: 2;
 }
 
 .back-to-index {
   font-size: 25px;
   font-weight: lighter;
-  left: -130px;
   padding-left: 20px;
   position: absolute;
   top: -50px;
@@ -100,47 +104,74 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 @media screen and (max-width: 1024px) {
   .book-title {
+    font-size: 25px;
+
     &::before {
+      background: $lemon;
+      content: "";
+      display: block;
+      height: 4px;
+      left: -58px;
+      position: absolute;
+      top: 400px;
       width: 295px;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
+  .title-description {
+    @include font-style(16px);
+    top: 400px;
+  }
+
+  .book-details {
+    font-size: 14px;
+  }
+
+  .description {
+    @include font-style(14px);
+  }
+
   .container {
     align-items: center;
     display: flex;
+    height: 600px;
     flex-direction: column;
     width: 335px;
 
     &::before {
       height: $badge-height-responsive;
       left: 242px;
-      top: 8px;
+      top: 64px;
       width: $badge-width-responsive;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
-  .book-img {
-    margin-right: 0;
+  .container-book {
+    grid-template: 55px 3fr 1.1fr/1fr;
   }
-}
 
-@media screen and (max-width: 1024px) {
+  .book-img {
+    margin: 0 auto;
+  }
+
   .container-book-title {
+    grid-column: auto;
     margin-top: 20px;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .back-to-index {
-    left: 125px;
-    top: 615px;
+    font-size: 20px;
+    left: 135px;
+    top: 595px;
 
     &::before {
-      left: -20px;
+      left: -38px;
+      position: relative;
+      top: 28px;
     }
+  }
+
+  .container-book-details {
+    margin-top: 0;
   }
 }
