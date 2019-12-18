@@ -50,7 +50,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
     height: $badge-height;
     left: 192px;
     position: absolute;
-    top: 108px;
+    top: 78px;
     transform: rotate(10deg);
     width: $badge-width;
     z-index: 1;
@@ -59,7 +59,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
 
 .container-book {
   display: grid;
-  grid-template: 100px / 250px 380px;
+  grid-template: 1fr/0.7fr 1fr;
 }
 
 .book-img {
