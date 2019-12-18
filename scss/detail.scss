@@ -117,28 +117,20 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
       width: 295px;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
   .title-description {
     @include font-style(16px);
     top: 400px;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .book-details {
     font-size: 14px;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .description {
     @include font-style(14px);
   }
-}
 
-@media screen and (max-width: 1024px) {
   .container {
     align-items: center;
     display: flex;
@@ -153,28 +145,20 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
       width: $badge-width-responsive;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
   .container-book {
     grid-template: 55px 3fr 1.1fr/1fr;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .book-img {
     margin: 0 auto;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .container-book-title {
     grid-column: auto;
     margin-top: 20px;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .back-to-index {
     font-size: 20px;
     left: 135px;
@@ -186,9 +170,7 @@ $badge-width-responsive: calc(#{$badge-width} * 0.7);
       top: 28px;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
   .container-book-details {
     margin-top: 0;
   }
